@@ -1,0 +1,16 @@
+.cursor--pointer {
+    cursor: pointer;
+  }
+  .top-title {
+    font-size: 24px;
+    text-align: left;
+    color: #403e50;
+  }
+
+  .background {
+    background-color: #403e50;
+  }
+  .topnav {
+    background-color: rgb(252, 252, 252);
+    padding: 15px;
+  }

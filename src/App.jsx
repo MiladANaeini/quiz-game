@@ -1,10 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "assets/css/main.css";
+import Layout from "components/layout";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <div>
-      hello
-      </div>
+    <>
+      <BrowserRouter>
+        <Layout />
+      </BrowserRouter>
+    </>
   );
 }
 
