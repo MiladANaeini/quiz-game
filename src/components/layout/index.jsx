@@ -4,22 +4,18 @@ import { Row, Card, CardBody } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
 function MainLayout() {
   return (
-    <>
+    <div>
       <TopNav />
       <div className="mt-0">
         <div className="mt-3">
-          {/* <Row className="justify-content-center">
-            <Colxx>
-              <Card> */}
-          {/* <CardBody> */}
-          <AppRoutes />
-          {/* </CardBody> */}
-          {/* </Card>
-            </Colxx>
-          </Row> */}
+          <Card>
+            <CardBody>
+              <AppRoutes />
+            </CardBody>
+          </Card>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
