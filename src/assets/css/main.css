@@ -1,13 +1,19 @@
 .cursor--pointer {
-    cursor: pointer;
-  }
-  .top-title {
-    font-size: 24px;
-    text-align: left;
-    color: #ffffff;
-  }
+  cursor: pointer;
+}
+.top-title {
+  font-size: 24px;
+  text-align: left;
+  color: #ffffff;
+}
 
-  .topnav {
-    background-color: #403e50 ;
-    padding: 15px;
-  }
+.topnav {
+  background-color: #403e50;
+  padding: 15px;
+}
+.currect-answer {
+  color: green;
+}
+.wrong-answer {
+  color: red;
+}

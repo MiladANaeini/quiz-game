@@ -11,7 +11,7 @@ export const filmQuiz = [
             {
                 answer: 'Tom Cruise',
                 correct: true,
-                id: 22,
+                id: 44,
             },
             {
                 answer: 'Jean-Claude Van Damme',
@@ -21,7 +21,7 @@ export const filmQuiz = [
             {
                 answer: 'James P. Sullivan',
                 correct: false,
-                id: 44,
+                id: 22,
             },
         ]
     },
@@ -42,12 +42,12 @@ export const filmQuiz = [
             {
                 answer: 'Ride or die',
                 correct: true,
-                id: 22,
+                id: 44,
             },
             {
                 answer: 'Die or ride',
                 correct: false,
-                id: 44,
+                id: 22,
             },
         ]
     },
@@ -472,7 +472,7 @@ export const filmQuiz = [
         id: 19,
         options: [
             {
-                answer: 'It is about being bored me to death',
+                answer: 'It is about boring me to death',
                 correct: false,
                 id: 11,
             },
@@ -482,7 +482,7 @@ export const filmQuiz = [
                 id: 33,
             },
             {
-                answer: 'It is more than just an asteroid heading towards earth',
+                answer: 'It is more than just an asteroid heading towards the earth',
                 correct: true,
                 id: 44,
             },
