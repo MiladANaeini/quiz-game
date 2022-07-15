@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import UseFetchData from "helpers/hooks/useFetchData";
 import { Card, CardBody, Row } from "reactstrap";
-import { Colxx } from "common/Colxx";
-import LoadingComp from "common/Loading";
+import { Colxx } from "components/common/Colxx";
+import CountdownTimer from "components/timer/Timer";
+import LoadingComp from "components/common/Loading";
 
 const QuizPage = () => {
   const Data = UseFetchData();
@@ -14,6 +15,7 @@ const QuizPage = () => {
       {!Data.loading ? (
         <Card>
           <CardBody>
+            <CountdownTimer />
             <h4>Question {count + 1}</h4>
           </CardBody>
         </Card>
