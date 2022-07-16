@@ -17,3 +17,23 @@
 .wrong-answer {
   color: red;
 }
+
+.question-option {
+  color: #403e50;
+  transition: transform 0.2s;
+  margin: 0 auto;
+  padding: 4px;
+}
+.question-option:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+}
+.option-selected {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+  border: 1px solid #403e50;
+  border-radius: 5px;
+  padding: 2px;
+}

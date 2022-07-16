@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { randomize } from "helpers/functions";
 
-const UseFetchData = () => {
+const UseFetchData = (callBack = () => { }) => {
     const [result, setResult] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -14,6 +14,7 @@ const UseFetchData = () => {
         setLoading(true);
         setTimeout(() => {
             setResult(randomize());
+            callBack()
             setLoading(false);
         }, 1000);
     }
