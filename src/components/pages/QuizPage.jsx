@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import UseFetchData from "helpers/hooks/useFetchData";
-import { Card, CardBody, Row } from "reactstrap";
+import { Card, CardBody, Row, Button } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
 import CountdownTimer from "components/timer/Timer";
 import LoadingComp from "components/common/Loading";
 import { TIMER_LIMIT, QOUESTION_LIMIT } from "assets/constants";
 import QuestionOptions from "components/question-options/Options";
+import ResultPage from "./ResultPage";
 
 const QuizPage = () => {
   const Data = UseFetchData();
@@ -38,6 +39,7 @@ const QuizPage = () => {
     <div>
       {!Data.loading ? (
         <Card>
+          {console.log("selectedAnswers", selectedAnswers)}
           <CardBody>
             {count < QOUESTION_LIMIT ? (
               <CountdownTimer
@@ -47,7 +49,12 @@ const QuizPage = () => {
                 limit={TIMER_LIMIT}
               />
             ) : (
-              <div>Your test is complete</div>
+              <div>
+                <ResultPage
+                  data={Data.result}
+                  selectedAnswers={selectedAnswers}
+                />
+              </div>
             )}
             <div className="d-flex justify-content-center">
               {count < QOUESTION_LIMIT && (
@@ -66,6 +73,9 @@ const QuizPage = () => {
                       options={Data.result[count].options}
                     />
                   </div>
+                  <Row>
+                    <Button onClick={() => setNum(TIMER_LIMIT)}>next</Button>
+                  </Row>
                 </div>
               )}
             </div>
