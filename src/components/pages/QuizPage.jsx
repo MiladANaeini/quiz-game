@@ -13,6 +13,8 @@ const QuizPage = () => {
   const [count, setCount] = useState(0);
   const [num, setNum] = useState(TIMER_LIMIT);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [removeOption, setRemoveOption] = useState(false);
+  const [removeOptionClicked, setRemoveOptionClicked] = useState(false);
 
   useEffect(() => {
     if (!Data.loading) {
@@ -39,7 +41,6 @@ const QuizPage = () => {
     <div>
       {!Data.loading ? (
         <Card>
-          {console.log("selectedAnswers", selectedAnswers)}
           <CardBody>
             {count < QOUESTION_LIMIT ? (
               <CountdownTimer
@@ -68,6 +69,8 @@ const QuizPage = () => {
                   </Row>
                   <div>
                     <QuestionOptions
+                      removeOption={removeOption}
+                      setRemoveOption={setRemoveOption}
                       num={num}
                       createAnswerModel={createAnswerModel}
                       options={Data.result[count].options}
@@ -75,6 +78,17 @@ const QuizPage = () => {
                   </div>
                   <Row>
                     <Button onClick={() => setNum(TIMER_LIMIT)}>next</Button>
+                  </Row>
+                  <Row>
+                    <Button
+                      disabled={removeOptionClicked}
+                      onClick={() => {
+                        setRemoveOption(true);
+                        setRemoveOptionClicked(true);
+                      }}
+                    >
+                      Remove two Options
+                    </Button>
                   </Row>
                 </div>
               )}
