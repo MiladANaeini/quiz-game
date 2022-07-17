@@ -17,6 +17,7 @@ const QuizPage = () => {
   const [removeOptionClicked, setRemoveOptionClicked] = useState(false);
   const [addedTime, setAddedTime] = useState(0);
   const [addedTimeClicked, setAddedTimeClicked] = useState(false);
+  var addedTimeTimeout = null;
 
   useEffect(() => {
     if (!Data.loading) {
@@ -26,7 +27,7 @@ const QuizPage = () => {
 
   useEffect(() => {
     if (addedTime === ADDED_TIME) {
-      setTimeout(() => {
+      addedTimeTimeout = setTimeout(() => {
         setAddedTime(0);
       }, num * 1000);
     }
@@ -48,10 +49,22 @@ const QuizPage = () => {
     });
     setSelectedAnswers(answers);
   };
+
+  const handleNext = () => {
+    setNum(TIMER_LIMIT);
+    setAddedTime(0);
+    clearTimeout(addedTimeTimeout);
+  };
+
   const handleAddedTime = () => {
     setAddedTimeClicked(true);
     setAddedTime(ADDED_TIME);
     setNum(num + ADDED_TIME);
+  };
+
+  const handleRemoveOptions = () => {
+    setRemoveOption(true);
+    setRemoveOptionClicked(true);
   };
 
   return (
@@ -94,15 +107,12 @@ const QuizPage = () => {
                     />
                   </div>
                   <Row>
-                    <Button onClick={() => setNum(TIMER_LIMIT)}>next</Button>
+                    <Button onClick={handleNext}>next</Button>
                   </Row>
                   <Row>
                     <Button
                       disabled={removeOptionClicked}
-                      onClick={() => {
-                        setRemoveOption(true);
-                        setRemoveOptionClicked(true);
-                      }}
+                      onClick={handleRemoveOptions}
                     >
                       Remove two Options
                     </Button>
@@ -112,7 +122,7 @@ const QuizPage = () => {
                       disabled={addedTimeClicked}
                       onClick={handleAddedTime}
                     >
-                      add 10 seconds{" "}
+                      Add extra 10 seconds
                     </Button>
                   </Row>
                 </div>

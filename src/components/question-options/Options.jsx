@@ -27,10 +27,10 @@ const QuestionOptions = ({
     setAnswerOptions(options);
   }, [options]);
   useEffect(() => {
-    if (removeOption) removeTwo();
+    if (removeOption) removeTwoOptions();
   }, [removeOption]);
 
-  const removeTwo = () => {
+  const removeTwoOptions = () => {
     let finalOptions = [];
     let correctOption = answerOptions.find(
       (element) => element.correct === true
