@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Row } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
 
@@ -19,7 +19,7 @@ const ResultPage = ({ selectedAnswers, data }) => {
   }, []);
 
   return (
-    <>
+    <div>
       Result page
       <Row>
         <Colxx>number of correct answers = {numCorrect}</Colxx>
@@ -34,7 +34,7 @@ const ResultPage = ({ selectedAnswers, data }) => {
           number questions unanswered = {10 - selectedAnswers.length}
         </Colxx>
       </Row>
-    </>
+    </div>
   );
 };
 export default ResultPage;

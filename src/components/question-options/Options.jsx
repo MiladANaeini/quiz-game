@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Card, CardBody, Row } from "reactstrap";
-import { Colxx } from "components/common/Colxx";
+import { CardBody } from "reactstrap";
 import { TIMER_LIMIT } from "assets/constants";
 import { randomize } from "helpers/functions";
 
