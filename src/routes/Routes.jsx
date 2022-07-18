@@ -9,8 +9,8 @@ const ResultPage = React.lazy(() => import("components/pages/ResultPage"));
 const AppRoutes = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <Routes basename="/home">
-        <Route path="/home" element={<HomePage />}></Route>
+      <Routes basename="/quiz-game">
+        <Route path="/quiz-game" element={<HomePage />}></Route>
         <Route path="/quiz" element={<QuizePage />}></Route>
         <Route path="/result" element={<ResultPage />}></Route>
       </Routes>
