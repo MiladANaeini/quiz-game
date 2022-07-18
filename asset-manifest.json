@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/MiladANaeini/quiz-game/static/css/main.482e5e7c.css",
+    "main.js": "/MiladANaeini/quiz-game/static/js/main.232bc077.js",
+    "static/js/76.2046baa5.chunk.js": "/MiladANaeini/quiz-game/static/js/76.2046baa5.chunk.js",
+    "static/js/293.d1749458.chunk.js": "/MiladANaeini/quiz-game/static/js/293.d1749458.chunk.js",
+    "static/js/255.ed591f6a.chunk.js": "/MiladANaeini/quiz-game/static/js/255.ed591f6a.chunk.js",
+    "static/js/787.eaa387ba.chunk.js": "/MiladANaeini/quiz-game/static/js/787.eaa387ba.chunk.js",
+    "static/media/background.jpg": "/MiladANaeini/quiz-game/static/media/background.bbd3106a1d41e2797232.jpg",
+    "index.html": "/MiladANaeini/quiz-game/index.html",
+    "main.482e5e7c.css.map": "/MiladANaeini/quiz-game/static/css/main.482e5e7c.css.map",
+    "main.232bc077.js.map": "/MiladANaeini/quiz-game/static/js/main.232bc077.js.map",
+    "76.2046baa5.chunk.js.map": "/MiladANaeini/quiz-game/static/js/76.2046baa5.chunk.js.map",
+    "293.d1749458.chunk.js.map": "/MiladANaeini/quiz-game/static/js/293.d1749458.chunk.js.map",
+    "255.ed591f6a.chunk.js.map": "/MiladANaeini/quiz-game/static/js/255.ed591f6a.chunk.js.map",
+    "787.eaa387ba.chunk.js.map": "/MiladANaeini/quiz-game/static/js/787.eaa387ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.482e5e7c.css",
+    "static/js/main.232bc077.js"
+  ]
+}
