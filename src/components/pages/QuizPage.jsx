@@ -95,7 +95,8 @@ const QuizPage = () => {
                     limit={TIMER_LIMIT + addedTime}
                   />
                 ) : (
-                  <div>
+                  <div className="d-flex justify-content-center">
+                    {" "}
                     <ResultPage
                       data={Data.result}
                       selectedAnswers={selectedAnswers}
@@ -139,10 +140,13 @@ const QuizPage = () => {
             {count < QOUESTION_LIMIT && (
               <Row>
                 <Row>
-                  <Button onClick={handleNext}>next</Button>
+                  <Button className="button-custom mt-2" onClick={handleNext}>
+                    next
+                  </Button>
                 </Row>
                 <Row>
                   <Button
+                    className="button-lifeLine mt-2"
                     disabled={removeOptionClicked}
                     onClick={handleRemoveOptions}
                   >
@@ -150,7 +154,11 @@ const QuizPage = () => {
                   </Button>
                 </Row>
                 <Row>
-                  <Button disabled={addedTimeClicked} onClick={handleAddedTime}>
+                  <Button
+                    className="button-lifeLine mt-2"
+                    disabled={addedTimeClicked}
+                    onClick={handleAddedTime}
+                  >
                     Add extra 10 seconds
                   </Button>
                 </Row>

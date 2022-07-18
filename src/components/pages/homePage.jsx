@@ -1,4 +1,4 @@
-import { Card, CardBody, Row, Button } from "reactstrap";
+import { Card, Row, Button } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
 import { useNavigate } from "react-router-dom";
 const HomePage = () => {
@@ -6,16 +6,23 @@ const HomePage = () => {
   return (
     <>
       <div className="d-flex justify-content-center">
-        <Row>
-          <Colxx>
-            <h3>Home Page</h3>
-          </Colxx>
-        </Row>
+        <Card className="home-page-card">
+          <Row>
+            <Colxx>
+              <h3 className="question-text">Home</h3>
+            </Colxx>
+          </Row>
+        </Card>
       </div>
       <div className="d-flex justify-content-center">
         <Row className="d-flex justify-content-center">
           <Colxx>
-            <Button onClick={() => navigate(`/quiz`)}>Start The Quiz</Button>
+            <Button
+              className="button-custom mt-2"
+              onClick={() => navigate(`/quiz`)}
+            >
+              Start The Quiz
+            </Button>
           </Colxx>
         </Row>
       </div>

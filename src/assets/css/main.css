@@ -49,6 +49,12 @@ body {
 .color-blue {
   color: #02204397;
 }
+.color-green {
+  color: #0e9e07;
+}
+.color-red {
+  color: #ba0909;
+}
 .question-text {
   color: #ffffff;
   font-weight: 500;
@@ -64,4 +70,23 @@ body {
 .timer-num {
   color: #022043;
   font-weight: bold;
+}
+.button-custom {
+  background-color: #001227ed;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 800;
+  padding: 20px;
+}
+.button-lifeLine {
+  background-color: #f9ee08;
+  border-radius: 20px;
+  color: #001227ed;
+  font-weight: 800;
+  padding: 20px;
+}
+.home-page-card {
+  background-color: #001227ed;
+  border-radius: 20px;
+  padding: 50px;
 }

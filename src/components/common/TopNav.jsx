@@ -22,11 +22,11 @@ const TopNav = () => {
                 alt="GitHub"
                 width={"26px"}
               />
-              <span>Quiz Game</span>
+              <span className="ms-2">Quiz Game</span>
             </span>
           </Colxx>
           <Colxx lg={2} md={2} sm={4} xs={4} xxs={6}>
-            Devo Test
+            <span className="top-title">Devo Test</span>
           </Colxx>
         </Row>
       </div>
