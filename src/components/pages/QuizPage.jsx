@@ -84,27 +84,32 @@ const QuizPage = () => {
     <div>
       {!Data.loading ? (
         <>
-          {count < QOUESTION_LIMIT ? (
-            <CountdownTimer
-              count={count}
-              num={num}
-              setNum={setNum}
-              limit={TIMER_LIMIT + addedTime}
-            />
-          ) : (
-            <div>
-              <ResultPage
-                data={Data.result}
-                selectedAnswers={selectedAnswers}
-              />
-            </div>
-          )}
-
-          <div className="d-flex justify-content-center">
+          <div className="d-flex">
             <Row>
-              <Colxx lg="12" md="12">
-                <Card className="question-card">
-                  <CardBody>
+              <Colxx lg="12">
+                {count < QOUESTION_LIMIT ? (
+                  <CountdownTimer
+                    count={count}
+                    num={num}
+                    setNum={setNum}
+                    limit={TIMER_LIMIT + addedTime}
+                  />
+                ) : (
+                  <div>
+                    <ResultPage
+                      data={Data.result}
+                      selectedAnswers={selectedAnswers}
+                    />
+                  </div>
+                )}
+              </Colxx>
+            </Row>
+          </div>
+          <div className="d-flex justify-content-center">
+            <Card className="question-card">
+              <CardBody>
+                <Row>
+                  <Colxx lg="12" md="12">
                     {count < QOUESTION_LIMIT && (
                       <div>
                         <Row>
@@ -125,30 +130,32 @@ const QuizPage = () => {
                         </div>
                       </div>
                     )}
-                  </CardBody>
-                </Card>
-              </Colxx>
-            </Row>
+                  </Colxx>
+                </Row>
+              </CardBody>
+            </Card>
           </div>
           <div className="d-flex justify-content-center">
-            <Row>
+            {count < QOUESTION_LIMIT && (
               <Row>
-                <Button onClick={handleNext}>next</Button>
+                <Row>
+                  <Button onClick={handleNext}>next</Button>
+                </Row>
+                <Row>
+                  <Button
+                    disabled={removeOptionClicked}
+                    onClick={handleRemoveOptions}
+                  >
+                    Remove two Options
+                  </Button>
+                </Row>
+                <Row>
+                  <Button disabled={addedTimeClicked} onClick={handleAddedTime}>
+                    Add extra 10 seconds
+                  </Button>
+                </Row>
               </Row>
-              <Row>
-                <Button
-                  disabled={removeOptionClicked}
-                  onClick={handleRemoveOptions}
-                >
-                  Remove two Options
-                </Button>
-              </Row>
-              <Row>
-                <Button disabled={addedTimeClicked} onClick={handleAddedTime}>
-                  Add extra 10 seconds
-                </Button>
-              </Row>
-            </Row>
+            )}
           </div>
         </>
       ) : (
