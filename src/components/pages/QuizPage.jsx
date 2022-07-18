@@ -85,9 +85,9 @@ const QuizPage = () => {
       {!Data.loading ? (
         <>
           <div>
-            <Row className="m-auto">
-              <Colxx lg="2">
-                {count < QOUESTION_LIMIT ? (
+            {count < QOUESTION_LIMIT ? (
+              <Row className="m-auto">
+                <Colxx sm="12" lg="2">
                   <div className="text-center">
                     <CountdownTimer
                       count={count}
@@ -96,17 +96,14 @@ const QuizPage = () => {
                       limit={TIMER_LIMIT + addedTime}
                     />
                   </div>
-                ) : (
-                  <div className="d-flex justify-content-center">
-                    {" "}
-                    <ResultPage
-                      data={Data.result}
-                      selectedAnswers={selectedAnswers}
-                    />
-                  </div>
-                )}
-              </Colxx>
-            </Row>
+                </Colxx>
+              </Row>
+            ) : (
+              <ResultPage
+                data={Data.result}
+                selectedAnswers={selectedAnswers}
+              />
+            )}
           </div>
           <div className="d-flex justify-content-center">
             <Card className="question-card">
@@ -141,12 +138,12 @@ const QuizPage = () => {
           <div className="d-flex justify-content-center">
             {count < QOUESTION_LIMIT && (
               <Row>
-                <Row>
+                <Colxx md="12">
                   <Button className="button-custom mt-2" onClick={handleNext}>
                     Next
                   </Button>
-                </Row>
-                <Row>
+                </Colxx>
+                <Colxx md="6">
                   <Button
                     className="button-lifeLine mt-2"
                     disabled={removeOptionClicked}
@@ -154,8 +151,8 @@ const QuizPage = () => {
                   >
                     Remove Two Options
                   </Button>
-                </Row>
-                <Row>
+                </Colxx>
+                <Colxx md="6">
                   <Button
                     className="button-lifeLine mt-2"
                     disabled={addedTimeClicked}
@@ -163,7 +160,7 @@ const QuizPage = () => {
                   >
                     Add extra 10 seconds
                   </Button>
-                </Row>
+                </Colxx>
               </Row>
             )}
           </div>

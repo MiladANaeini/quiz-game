@@ -67,6 +67,15 @@ body {
   background-color: #f9ee08;
   border-radius: 20px;
 }
+.result-card {
+  background-color: #f9ee08;
+  border-radius: 20px;
+  padding: 30px;
+}
+.result-text {
+  color: #022043;
+  font-weight: bold;
+}
 .timer-num {
   color: #022043;
   font-weight: bold;
@@ -77,6 +86,7 @@ body {
   color: #ffffff;
   font-weight: 800;
   padding: 20px;
+  width: 100%;
 }
 .button-lifeLine {
   background-color: #f9ee08;
@@ -84,6 +94,7 @@ body {
   color: #001227ed;
   font-weight: 800;
   padding: 20px;
+  width: 100%;
 }
 .home-page-card {
   background-color: #001227ed;

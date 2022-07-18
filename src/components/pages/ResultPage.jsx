@@ -21,20 +21,20 @@ const ResultPage = ({ selectedAnswers, data }) => {
   }, []);
 
   return (
-    <>
-      <Card className="timer-card">
+    <div className="d-flex justify-content-center align-middle">
+      <Card className="result-card">
         <CardBody>
-          <h2 className="timer-num">Your Result</h2>
+          <h2 className="result-text">Your Result</h2>
           <Row>
             <Colxx>
-              <h3 className="timer-num">
+              <h3 className="result-text">
                 Number of correct answers = {numCorrect}
               </h3>
             </Colxx>
           </Row>
           <Row>
             <Colxx>
-              <h3 className="timer-num">
+              <h3 className="result-text">
                 Number of incorrect answers ={" "}
                 {selectedAnswers.length - numCorrect}
               </h3>
@@ -42,13 +42,13 @@ const ResultPage = ({ selectedAnswers, data }) => {
           </Row>
           <Row>
             <Colxx>
-              <h3 className="timer-num">
+              <h3 className="result-text">
                 Number questions unanswered = {10 - selectedAnswers.length}
               </h3>
             </Colxx>
           </Row>
           <Row>
-            <Colxx>
+            <Colxx md="12" lg="5">
               <Button
                 className="button-custom mt-2"
                 onClick={() => navigate(`/home`)}
@@ -56,7 +56,7 @@ const ResultPage = ({ selectedAnswers, data }) => {
                 Home Page
               </Button>
             </Colxx>
-            <Colxx>
+            <Colxx md="12" lg="5">
               <Button
                 className="button-custom mt-2"
                 onClick={() => window.location.reload(false)}
@@ -67,7 +67,7 @@ const ResultPage = ({ selectedAnswers, data }) => {
           </Row>
         </CardBody>
       </Card>
-    </>
+    </div>
   );
 };
 export default ResultPage;
