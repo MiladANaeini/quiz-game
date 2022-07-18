@@ -18,6 +18,7 @@ const HomePage = () => {
         <Row className="d-flex justify-content-center">
           <Colxx>
             <Button
+              data-testid="startQuizButton"
               className="button-custom mt-2"
               onClick={() => navigate(`/quiz`)}
             >

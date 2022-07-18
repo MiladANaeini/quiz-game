@@ -84,16 +84,18 @@ const QuizPage = () => {
     <div>
       {!Data.loading ? (
         <>
-          <div className="d-flex">
-            <Row>
-              <Colxx lg="12">
+          <div>
+            <Row className="m-auto">
+              <Colxx lg="2">
                 {count < QOUESTION_LIMIT ? (
-                  <CountdownTimer
-                    count={count}
-                    num={num}
-                    setNum={setNum}
-                    limit={TIMER_LIMIT + addedTime}
-                  />
+                  <div className="text-center">
+                    <CountdownTimer
+                      count={count}
+                      num={num}
+                      setNum={setNum}
+                      limit={TIMER_LIMIT + addedTime}
+                    />
+                  </div>
                 ) : (
                   <div className="d-flex justify-content-center">
                     {" "}
@@ -141,7 +143,7 @@ const QuizPage = () => {
               <Row>
                 <Row>
                   <Button className="button-custom mt-2" onClick={handleNext}>
-                    next
+                    Next
                   </Button>
                 </Row>
                 <Row>
@@ -150,7 +152,7 @@ const QuizPage = () => {
                     disabled={removeOptionClicked}
                     onClick={handleRemoveOptions}
                   >
-                    Remove two Options
+                    Remove Two Options
                   </Button>
                 </Row>
                 <Row>
