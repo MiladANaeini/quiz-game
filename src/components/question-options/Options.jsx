@@ -49,7 +49,7 @@ const QuestionOptions = ({
       <CardBody>
         {answerOptions.map((item, i) => (
           <div
-            className={`cursor--pointer mt-4 question-option ${
+            className={`cursor--pointer question-text mt-4 question-option ${
               item.id === selectedValue ? "option-selected" : ""
             }`}
             tabindex="1"

@@ -1,3 +1,6 @@
+body {
+  background-image: url("../images/background.jpg");
+}
 .cursor--pointer {
   cursor: pointer;
 }
@@ -8,7 +11,7 @@
 }
 
 .topnav {
-  background-color: #403e50;
+  background-color: #001227;
   padding: 15px;
 }
 .currect-answer {
@@ -36,4 +39,29 @@
   border: 1px solid #403e50;
   border-radius: 5px;
   padding: 2px;
+}
+.card-background {
+  background-color: #02204397;
+}
+.color-yellow {
+  color: #f9ee08;
+}
+.color-blue {
+  color: #02204397;
+}
+.question-text {
+  color: #ffffff;
+  font-weight: 500;
+}
+.question-card {
+  background-color: #001227ed;
+  border-radius: 20px;
+}
+.timer-card {
+  background-color: #f9ee08;
+  border-radius: 20px;
+}
+.timer-num {
+  color: #022043;
+  font-weight: bold;
 }

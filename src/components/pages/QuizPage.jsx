@@ -43,10 +43,23 @@ const QuizPage = () => {
 
   const createAnswerModel = (optionId = "") => {
     let answers = selectedAnswers;
-    answers.push({
-      questionId: Data.result[count].id,
+    let currentQuestionId = Data.result[count].id;
+    let existingAnswer = null;
+    let chosenAnswer = {
+      questionId: currentQuestionId,
       optionId,
-    });
+    };
+    if (selectedAnswers.length > 0) {
+      existingAnswer = answers.find(
+        (element) => element.questionId === currentQuestionId
+      );
+    }
+    if (!existingAnswer) {
+      answers.push(chosenAnswer);
+    } else {
+      let index = answers.indexOf(existingAnswer);
+      answers.splice(index, 1, chosenAnswer);
+    }
     setSelectedAnswers(answers);
   };
 
@@ -70,66 +83,74 @@ const QuizPage = () => {
   return (
     <div>
       {!Data.loading ? (
-        <Card>
-          <CardBody>
-            {count < QOUESTION_LIMIT ? (
-              <CountdownTimer
-                count={count}
-                num={num}
-                setNum={setNum}
-                limit={TIMER_LIMIT + addedTime}
+        <>
+          {count < QOUESTION_LIMIT ? (
+            <CountdownTimer
+              count={count}
+              num={num}
+              setNum={setNum}
+              limit={TIMER_LIMIT + addedTime}
+            />
+          ) : (
+            <div>
+              <ResultPage
+                data={Data.result}
+                selectedAnswers={selectedAnswers}
               />
-            ) : (
-              <div>
-                <ResultPage
-                  data={Data.result}
-                  selectedAnswers={selectedAnswers}
-                />
-              </div>
-            )}
-            <div className="d-flex justify-content-center">
-              {count < QOUESTION_LIMIT && (
-                <div>
-                  <Row>
-                    <Colxx>
-                      <h4>
-                        {count + 1} . {Data.result[count].question}{" "}
-                      </h4>
-                    </Colxx>
-                  </Row>
-                  <div>
-                    <QuestionOptions
-                      removeOption={removeOption}
-                      setRemoveOption={setRemoveOption}
-                      num={num}
-                      createAnswerModel={createAnswerModel}
-                      options={Data.result[count].options}
-                    />
-                  </div>
-                  <Row>
-                    <Button onClick={handleNext}>next</Button>
-                  </Row>
-                  <Row>
-                    <Button
-                      disabled={removeOptionClicked}
-                      onClick={handleRemoveOptions}
-                    >
-                      Remove two Options
-                    </Button>
-                  </Row>
-                  <Row>
-                    <Button
-                      disabled={addedTimeClicked}
-                      onClick={handleAddedTime}
-                    >
-                      Add extra 10 seconds
-                    </Button>
-                  </Row>
-                </div>
-              )}
             </div>
-          </CardBody>
-        </Card>
+          )}
+
+          <div className="d-flex justify-content-center">
+            <Row>
+              <Colxx lg="12" md="12">
+                <Card className="question-card">
+                  <CardBody>
+                    {count < QOUESTION_LIMIT && (
+                      <div>
+                        <Row>
+                          <Colxx>
+                            <h4 className="question-text">
+                              {count + 1} . {Data.result[count].question}{" "}
+                            </h4>
+                          </Colxx>
+                        </Row>
+                        <div>
+                          <QuestionOptions
+                            removeOption={removeOption}
+                            setRemoveOption={setRemoveOption}
+                            num={num}
+                            createAnswerModel={createAnswerModel}
+                            options={Data.result[count].options}
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </CardBody>
+                </Card>
+              </Colxx>
+            </Row>
+          </div>
+          <div className="d-flex justify-content-center">
+            <Row>
+              <Row>
+                <Button onClick={handleNext}>next</Button>
+              </Row>
+              <Row>
+                <Button
+                  disabled={removeOptionClicked}
+                  onClick={handleRemoveOptions}
+                >
+                  Remove two Options
+                </Button>
+              </Row>
+              <Row>
+                <Button disabled={addedTimeClicked} onClick={handleAddedTime}>
+                  Add extra 10 seconds
+                </Button>
+              </Row>
+            </Row>
+          </div>
+        </>
       ) : (
         <LoadingComp />
       )}

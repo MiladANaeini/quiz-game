@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { QOUESTION_LIMIT } from "assets/constants";
+import { Card, CardBody, Row, Button } from "reactstrap";
+import { Colxx } from "components/common/Colxx";
 const CountdownTimer = ({ limit, num, setNum, count }) => {
   let intervalRef = useRef();
 
@@ -19,7 +21,11 @@ const CountdownTimer = ({ limit, num, setNum, count }) => {
 
   return (
     <div>
-      <div>{num}</div>
+      <Card className="timer-card">
+        <CardBody>
+          <h3 className="timer-num">Timer : {num}</h3>
+        </CardBody>
+      </Card>
     </div>
   );
 };
