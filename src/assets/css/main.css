@@ -5,7 +5,7 @@ body {
   cursor: pointer;
 }
 .top-title {
-  font-size: 24px;
+  font-size: 16px;
   text-align: left;
   color: #ffffff;
 }
@@ -28,14 +28,14 @@ body {
   padding: 4px;
 }
 .question-option:hover {
-  -ms-transform: scale(1.05); /* IE 9 */
-  -webkit-transform: scale(1.05); /* Safari 3-8 */
-  transform: scale(1.05);
+  -ms-transform: scale(1.03); /* IE 9 */
+  -webkit-transform: scale(1.03); /* Safari 3-8 */
+  transform: scale(1.03);
 }
 .option-selected {
-  -ms-transform: scale(1.05); /* IE 9 */
-  -webkit-transform: scale(1.05); /* Safari 3-8 */
-  transform: scale(1.05);
+  -ms-transform: scale(1.03); /* IE 9 */
+  -webkit-transform: scale(1.03); /* Safari 3-8 */
+  transform: scale(1.03);
   border: 1px solid #403e50;
   border-radius: 5px;
   padding: 2px;
@@ -78,7 +78,7 @@ body {
 }
 .timer-num {
   color: #022043;
-  font-weight: bold;
+  font-weight: 600;
 }
 .button-custom {
   background-color: #001227ed;
@@ -87,8 +87,35 @@ body {
   font-weight: 800;
   padding: 20px;
   width: 100%;
+  font-size: 0.82rem;
+}
+.button-custom:hover {
+  background-color: #000000;
+}
+.button-custom:focus {
+  background-color: #001227ed;
+}
+.button-custom:active {
+  background-color: #001227ed;
 }
 .button-lifeLine {
+  background-color: #f9ee08;
+  border-radius: 20px;
+  color: #001227ed;
+  font-weight: 800;
+  padding: 20px;
+  width: 100%;
+  font-size: 0.82rem;
+}
+.button-lifeLine:hover {
+  background-color: #e1d501;
+  color: #022043;
+}
+.button-start:hover {
+  background-color: #e1d501;
+  color: #022043;
+}
+.button-start {
   background-color: #f9ee08;
   border-radius: 20px;
   color: #001227ed;

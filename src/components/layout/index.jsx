@@ -8,7 +8,9 @@ function MainLayout() {
       <TopNav />
       <div className="mt-0">
         <div className="mt-3">
-          <AppRoutes />
+          <CardBody>
+            <AppRoutes />
+          </CardBody>
         </div>
       </div>
     </div>

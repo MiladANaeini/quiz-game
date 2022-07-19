@@ -21,11 +21,15 @@ const CountdownTimer = ({ limit, num, setNum, count }) => {
 
   return (
     <div>
-      <Card className="timer-card">
-        <CardBody>
-          <h3 className="timer-num">Timer : {num}</h3>
-        </CardBody>
-      </Card>
+      <Row className="text-center">
+        <Colxx xs="12" sm="4" md="3" lg="2">
+          <Card className="timer-card">
+            <CardBody>
+              <h4 className="timer-num">Timer : {num}</h4>
+            </CardBody>
+          </Card>
+        </Colxx>
+      </Row>
     </div>
   );
 };

@@ -86,64 +86,64 @@ const QuizPage = () => {
         <>
           <div>
             {count < QOUESTION_LIMIT ? (
+              <CountdownTimer
+                count={count}
+                num={num}
+                setNum={setNum}
+                limit={TIMER_LIMIT + addedTime}
+              />
+            ) : (
               <Row className="m-auto">
-                <Colxx sm="12" lg="2">
-                  <div className="text-center">
-                    <CountdownTimer
-                      count={count}
-                      num={num}
-                      setNum={setNum}
-                      limit={TIMER_LIMIT + addedTime}
-                    />
-                  </div>
+                <Colxx>
+                  <ResultPage
+                    data={Data.result}
+                    selectedAnswers={selectedAnswers}
+                  />
                 </Colxx>
               </Row>
-            ) : (
-              <ResultPage
-                data={Data.result}
-                selectedAnswers={selectedAnswers}
-              />
             )}
           </div>
-          <div className="d-flex justify-content-center">
-            <Card className="question-card">
-              <CardBody>
-                <Row>
-                  <Colxx lg="12" md="12">
-                    {count < QOUESTION_LIMIT && (
+          {count < QOUESTION_LIMIT && (
+            <Row className="d-flex justify-content-center">
+              <Colxx lg="6" md="10">
+                <Card className="question-card mt-3">
+                  <div>
+                    <CardBody>
+                      <Row>
+                        <Colxx sm="12">
+                          <h4 className="question-text">
+                            {count + 1} . {Data.result[count].question}{" "}
+                          </h4>
+                        </Colxx>
+                      </Row>
                       <div>
                         <Row>
-                          <Colxx>
-                            <h4 className="question-text">
-                              {count + 1} . {Data.result[count].question}{" "}
-                            </h4>
+                          <Colxx sm="12">
+                            <QuestionOptions
+                              removeOption={removeOption}
+                              setRemoveOption={setRemoveOption}
+                              num={num}
+                              createAnswerModel={createAnswerModel}
+                              options={Data.result[count].options}
+                            />
                           </Colxx>
                         </Row>
-                        <div>
-                          <QuestionOptions
-                            removeOption={removeOption}
-                            setRemoveOption={setRemoveOption}
-                            num={num}
-                            createAnswerModel={createAnswerModel}
-                            options={Data.result[count].options}
-                          />
-                        </div>
                       </div>
-                    )}
-                  </Colxx>
-                </Row>
-              </CardBody>
-            </Card>
-          </div>
+                    </CardBody>
+                  </div>
+                </Card>
+              </Colxx>
+            </Row>
+          )}
           <div className="d-flex justify-content-center">
             {count < QOUESTION_LIMIT && (
-              <Row>
-                <Colxx md="12">
+              <Row className="d-flex justify-content-center">
+                <Colxx xs="10" sm="10" md="12" lg="12">
                   <Button className="button-custom mt-2" onClick={handleNext}>
                     Next
                   </Button>
                 </Colxx>
-                <Colxx md="6">
+                <Colxx xs="10" sm="10" md="6" lg="6">
                   <Button
                     className="button-lifeLine mt-2"
                     disabled={removeOptionClicked}
@@ -152,7 +152,7 @@ const QuizPage = () => {
                     Remove Two Options
                   </Button>
                 </Colxx>
-                <Colxx md="6">
+                <Colxx xs="10" sm="10" md="6" lg="6">
                   <Button
                     className="button-lifeLine mt-2"
                     disabled={addedTimeClicked}

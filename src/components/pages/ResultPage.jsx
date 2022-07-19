@@ -21,41 +21,33 @@ const ResultPage = ({ selectedAnswers, data }) => {
   }, []);
 
   return (
-    <div className="d-flex justify-content-center align-middle">
+    <div className="d-flex justify-content-center">
       <Card className="result-card">
         <CardBody>
-          <h2 className="result-text">Your Result</h2>
+          <h4 className="result-text">Your Result</h4>
           <Row>
             <Colxx>
-              <h3 className="result-text">
-                Number of correct answers = {numCorrect}
-              </h3>
+              <h4 className="result-text">
+                Number of correct answers : {numCorrect}
+              </h4>
             </Colxx>
           </Row>
           <Row>
             <Colxx>
-              <h3 className="result-text">
-                Number of incorrect answers ={" "}
+              <h4 className="result-text">
+                Number of incorrect answers :{" "}
                 {selectedAnswers.length - numCorrect}
-              </h3>
+              </h4>
             </Colxx>
           </Row>
           <Row>
             <Colxx>
-              <h3 className="result-text">
-                Number questions unanswered = {10 - selectedAnswers.length}
-              </h3>
+              <h4 className="result-text">
+                Number questions unanswered : {10 - selectedAnswers.length}
+              </h4>
             </Colxx>
           </Row>
-          <Row>
-            <Colxx md="12" lg="5">
-              <Button
-                className="button-custom mt-2"
-                onClick={() => navigate(`/home`)}
-              >
-                Home Page
-              </Button>
-            </Colxx>
+          <Row className="d-flex justify-content-center mt-3">
             <Colxx md="12" lg="5">
               <Button
                 className="button-custom mt-2"
