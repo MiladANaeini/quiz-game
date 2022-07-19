@@ -17,14 +17,17 @@ const QuestionOptions = ({
     setSelectedValue(id);
     createAnswerModel(id, correct);
   };
+
   useEffect(() => {
     if (num === TIMER_LIMIT) {
       setSelectedValue("");
     }
   }, [num]);
+
   useEffect(() => {
     setAnswerOptions(options);
   }, [options]);
+
   useEffect(() => {
     if (removeOption) removeTwoOptions();
   }, [removeOption]);

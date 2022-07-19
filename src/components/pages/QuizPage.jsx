@@ -10,8 +10,8 @@ import ResultPage from "./ResultPage";
 
 const QuizPage = () => {
   const Data = UseFetchData();
-  const [count, setCount] = useState(0);
-  const [num, setNum] = useState(TIMER_LIMIT);
+  const [count, setCount] = useState(0); //counts number of questions
+  const [num, setNum] = useState(TIMER_LIMIT); //is the countdown timer number which is shown every second
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [removeOption, setRemoveOption] = useState(false);
   const [removeOptionClicked, setRemoveOptionClicked] = useState(false);
@@ -26,6 +26,7 @@ const QuizPage = () => {
   }, [num]);
 
   useEffect(() => {
+    //is only called when user clicks add extra time button
     if (addedTime === ADDED_TIME) {
       addedTimeTimeout = setTimeout(() => {
         setAddedTime(0);
