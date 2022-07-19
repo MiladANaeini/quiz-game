@@ -14,3 +14,23 @@ export const randomize = (list = [], range = 0) => {
     return (questionList);
 
 };
+export const total = (arr) => {
+    let sum = 0;
+    if (arr) {
+        for (let i = 0; i < arr.length; i++) {
+            sum = sum + arr[i]
+        }
+    }
+    return (sum);
+}
+
+export const average = (arr) => {
+    let avg = 0;
+    if (arr) {
+        if (arr.length > 0) {
+            avg = Math.round(total(arr) / arr.length)
+
+        }
+    }
+    return (avg);
+}

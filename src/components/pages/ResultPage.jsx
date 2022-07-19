@@ -1,17 +1,31 @@
 import { useEffect, useState } from "react";
 import { Row, Card, CardBody, Button } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
-
+import { TIMER_LIMIT } from "assets/constants";
+import { average } from "helpers/functions";
 const ResultPage = ({ selectedAnswers }) => {
   const [numCorrect, setNumCorrect] = useState(0);
+  const [quickestAnswer, setQuickestAnswer] = useState(0);
+  const [longestAnswer, setLongestAnswer] = useState(TIMER_LIMIT);
+  const [averageTimeSpent, setAverageTimeSpent] = useState(TIMER_LIMIT);
 
   const findCorrectAnswers = (selectedAnswers) => {
     let totalCorrectAnswers = 0;
+    let timeSpent = [];
     selectedAnswers.map((item) => {
+      timeSpent.push(item.timeSpent);
       if (item.correct) {
         totalCorrectAnswers++;
       }
     });
+    if (timeSpent.length > 0) {
+      let min = Math.min(...timeSpent);
+      let max = Math.max(...timeSpent);
+      let avg = average(timeSpent);
+      setQuickestAnswer(min);
+      setLongestAnswer(max);
+      setAverageTimeSpent(avg);
+    }
     setNumCorrect(totalCorrectAnswers);
   };
   useEffect(() => {
@@ -22,7 +36,7 @@ const ResultPage = ({ selectedAnswers }) => {
     <div className="d-flex justify-content-center">
       <Card className="result-card">
         <CardBody>
-          <h4 className="result-text">Your Result</h4>
+          <h4 className="mb-2">Your Result</h4>
           <Row>
             <Colxx>
               <h4 className="result-text">
@@ -45,6 +59,34 @@ const ResultPage = ({ selectedAnswers }) => {
               </h4>
             </Colxx>
           </Row>
+          {selectedAnswers.length > 0 && (
+            <>
+              <div className="mt-4 mb-2">
+                <h4>Statistics About Answered Questions</h4>
+              </div>
+              <Row>
+                <Colxx>
+                  <h4 className="result-text">
+                    Quickest answering time : {quickestAnswer} second(s)
+                  </h4>
+                </Colxx>
+              </Row>
+              <Row>
+                <Colxx>
+                  <h4 className="result-text">
+                    Longest answering time : {longestAnswer} second(s)
+                  </h4>
+                </Colxx>
+              </Row>
+              <Row>
+                <Colxx>
+                  <h4 className="result-text">
+                    Average answering time : {averageTimeSpent} second(s)
+                  </h4>
+                </Colxx>
+              </Row>
+            </>
+          )}
           <Row className="d-flex justify-content-center mt-3">
             <Colxx md="12" lg="5">
               <Button

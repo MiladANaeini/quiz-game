@@ -50,6 +50,8 @@ const QuizPage = () => {
       questionId: currentQuestionId,
       optionId,
       correct,
+      timeSpent:
+        addedTime > 0 ? TIMER_LIMIT - (num - addedTime) : TIMER_LIMIT - num,
     };
     if (selectedAnswers.length > 0) {
       existingAnswer = answers.find(
