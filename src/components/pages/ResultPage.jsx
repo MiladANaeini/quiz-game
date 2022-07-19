@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { Row, Card, CardBody, Button } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
-import { useNavigate } from "react-router-dom";
 
-const ResultPage = ({ selectedAnswers, data }) => {
+const ResultPage = ({ selectedAnswers }) => {
   const [numCorrect, setNumCorrect] = useState(0);
-  let navigate = useNavigate();
 
   const findCorrectAnswers = (selectedAnswers) => {
     let totalCorrectAnswers = 0;
-    selectedAnswers.map((item, index) => {
-      if (item.optionId === 44) {
+    selectedAnswers.map((item) => {
+      if (item.correct) {
         totalCorrectAnswers++;
       }
     });

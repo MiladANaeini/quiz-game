@@ -41,13 +41,14 @@ const QuizPage = () => {
     }
   };
 
-  const createAnswerModel = (optionId = "") => {
+  const createAnswerModel = (optionId = "", correct = false) => {
     let answers = selectedAnswers;
     let currentQuestionId = Data.result[count].id;
     let existingAnswer = null;
     let chosenAnswer = {
       questionId: currentQuestionId,
       optionId,
+      correct,
     };
     if (selectedAnswers.length > 0) {
       existingAnswer = answers.find(

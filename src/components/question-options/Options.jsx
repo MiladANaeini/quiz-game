@@ -13,9 +13,9 @@ const QuestionOptions = ({
   const [selectedValue, setSelectedValue] = useState("");
   const [answerOptions, setAnswerOptions] = useState(options);
 
-  const createSelectedOption = (id) => {
+  const createSelectedOption = (id, correct) => {
     setSelectedValue(id);
-    createAnswerModel(id);
+    createAnswerModel(id, correct);
   };
   useEffect(() => {
     if (num === TIMER_LIMIT) {
@@ -53,7 +53,7 @@ const QuestionOptions = ({
               item.id === selectedValue ? "option-selected" : ""
             }`}
             tabindex="1"
-            onClick={() => createSelectedOption(item.id)}
+            onClick={() => createSelectedOption(item.id, item.correct)}
           >
             {i + 1 + ". " + item.answer}
           </div>
