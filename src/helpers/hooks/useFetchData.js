@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { randomize } from "helpers/functions";
 import { filmQuiz } from "assets/data/QuestionsList"
-import { QOUESTION_LIMIT } from "assets/constants";
+import { QOUESTION_LIMIT } from "helpers/constants";
 
 const UseFetchData = (callBack = () => { }) => {
     const [result, setResult] = useState([]);

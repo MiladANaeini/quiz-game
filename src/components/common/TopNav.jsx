@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react";
-import { Row, Popover } from "reactstrap";
+import { useState } from "react";
+import { Row, Tooltip } from "reactstrap";
 import { Colxx } from "./Colxx";
 import GitHubLogo from "assets/images/GitHubLogo.png";
 const TopNav = () => {
-  const [popOverVisible, setPopOverVisible] = useState(false);
-  useEffect(() => {
-    if (popOverVisible) {
-      setTimeout(() => {
-        setPopOverVisible(false);
-      }, 2000);
-    }
-  }, []);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -41,13 +38,18 @@ const TopNav = () => {
                 navigator.clipboard.writeText("milad88884@gmail.com")
               }
               className="top-title cursor--pointer align-center"
-              id="Popover1"
+              id="TooltipExample"
             >
               milad88884@gmail.com
             </span>
-            <Popover placement="span" isOpen={popOverVisible} target="Popover1">
-              copy
-            </Popover>
+            <Tooltip
+              placement="bottom"
+              isOpen={isOpen}
+              target="TooltipExample"
+              toggle={() => toggle()}
+            >
+              Click to copy to clipboard
+            </Tooltip>
           </Colxx>
         </Row>
       </div>

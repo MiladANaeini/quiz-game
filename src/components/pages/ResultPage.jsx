@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Row, Card, CardBody, Button } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
-import { TIMER_LIMIT } from "assets/constants";
+import { TIMER_LIMIT } from "helpers/constants";
 import { average } from "helpers/functions";
 const ResultPage = ({ selectedAnswers }) => {
   const [numCorrect, setNumCorrect] = useState(0);
@@ -64,24 +64,40 @@ const ResultPage = ({ selectedAnswers }) => {
               <div className="mt-4 mb-2">
                 <h4>Statistics About Answered Questions</h4>
               </div>
+              {
+                <Row>
+                  <Colxx>
+                    <h4 className="result-text">
+                      {quickestAnswer < 1 ? (
+                        <>Quickest answering time : Less than 1 second</>
+                      ) : (
+                        <>
+                          Quickest answering time : {quickestAnswer} second(s){" "}
+                        </>
+                      )}
+                    </h4>
+                  </Colxx>
+                </Row>
+              }
               <Row>
                 <Colxx>
                   <h4 className="result-text">
-                    Quickest answering time : {quickestAnswer} second(s)
+                    {longestAnswer < 1 ? (
+                      <>Longest answering time : Less than 1 second</>
+                    ) : (
+                      <>Longest answering time : {longestAnswer} second(s)</>
+                    )}
                   </h4>
                 </Colxx>
               </Row>
               <Row>
                 <Colxx>
                   <h4 className="result-text">
-                    Longest answering time : {longestAnswer} second(s)
-                  </h4>
-                </Colxx>
-              </Row>
-              <Row>
-                <Colxx>
-                  <h4 className="result-text">
-                    Average answering time : {averageTimeSpent} second(s)
+                    {averageTimeSpent < 1 ? (
+                      <>Average answering time : Less than 1 second</>
+                    ) : (
+                      <>Average answering time : {averageTimeSpent} second(s)</>
+                    )}
                   </h4>
                 </Colxx>
               </Row>

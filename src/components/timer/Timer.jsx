@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { QOUESTION_LIMIT } from "assets/constants";
+import { QOUESTION_LIMIT } from "helpers/constants";
 import { Card, CardBody, Row } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
 const CountdownTimer = ({ limit, num, setNum, count }) => {

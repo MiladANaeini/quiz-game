@@ -1,5 +1,5 @@
 import { randomize } from "helpers/functions";
-import { QOUESTION_LIMIT, } from "assets/constants";
+import { QOUESTION_LIMIT, } from "helpers/constants";
 import { filmQuiz } from "assets/data/QuestionsList"
 
 test("randomize function should return an array equal to the length of its given range", () => {

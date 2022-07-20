@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { CardBody } from "reactstrap";
-import { TIMER_LIMIT } from "assets/constants";
+import { TIMER_LIMIT } from "helpers/constants";
 import { randomize } from "helpers/functions";
 
 const QuestionOptions = ({

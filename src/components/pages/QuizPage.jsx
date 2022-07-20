@@ -4,7 +4,7 @@ import { Card, CardBody, Row, Button } from "reactstrap";
 import { Colxx } from "components/common/Colxx";
 import CountdownTimer from "components/timer/Timer";
 import LoadingComp from "components/common/Loading";
-import { TIMER_LIMIT, QOUESTION_LIMIT, ADDED_TIME } from "assets/constants";
+import { TIMER_LIMIT, QOUESTION_LIMIT, ADDED_TIME } from "helpers/constants";
 import QuestionOptions from "components/question-options/Options";
 import ResultPage from "./ResultPage";
 
